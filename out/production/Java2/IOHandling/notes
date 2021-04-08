@@ -1,0 +1,30 @@
+Different operations that can be performed on a file are:
+
+Creation of a new file
+Opening an existing file
+Reading from file
+Writing to a file
+Moving to a specific location in a file
+Closing a file
+
+
+
+Different classes that can be used in Java for File Handling:
+
+InputStream
+OutputStream
+FilterOutputStream
+FileOutputStream
+ByteArrayOutputStream
+ByteArrayInputStream
+FileInputStream
+FilterInputStream
+StringBufferInputStream
+SequenceInputStream
+BufferedOutputStream
+StringBufferInputStream
+DataOutputStream
+PrintStream
+BufferedInputStream
+DataInputStream
+PushbackInputStream

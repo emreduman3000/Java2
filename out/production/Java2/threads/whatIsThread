@@ -1,0 +1,40 @@
+İşlem yapan(concurrent) uygulamalar geliştirmede iki temel işlem birimi karşımıza çıkmaktadır.
+Bunlar “processler” ve “threadler” dir.
+“Processlerin” önemine  karşılık java programlama dili thread(iş parçacığı)lere odaklanmıştır.
+
+Günümüzde bir bilgisayar sisteminde  tek bir işlem birimi olsa dahi ,
+bu tek bir işlem birimi (işlemci) işletim sisteminin kaynak kullanım stratejisine göre her birine belli bir zaman ayırma esasına göre işlem yapmaktadır.
+Dolayısıyla bilgisayar sisteminde  aynı anda çok sayıda thread ve process bulunmaktadır.
+
+
+
+Process(işlem)
+
+“Process” kendisine ait kaynakları olan işlem birimidir.
+Örneğin her “process” kendisine ait hafıza alanına sahiptir.
+
+“Process” genellikle uygulamanın kendisi olarak görülür ancak bir uygulama içinde birbirine bağımlı ve ya birlikte çalışan  processlerden meydana gelmiş olabilir.
+Processlerin birlikte çalışabilirliğinin sağlanabilmesi için çoğu işletim sistemi Inter Process Communication (IPC) diye adlandırılan yapıyı desteklemektedir,
+bu yapı sadece aynı bilgisayardaki processlerin birlikte çalışabilmesini değil aynı ağdaki processlerin birlikte çalışabilmesine imkan sağlamaktadır.
+
+“process”  oluştrulmuş(created) duruma geçer ve ikincil bir hafıza biriminde ana hafıza (ram)  birimine yüklenir.Bu aşamadan sonra bekleme durumuna geçer “waiting” olur.
+“waiting” durumunda iken işlemcinin kendine ayıracağı zamanı bekler ve  işleme koyulduğu anda “running” durumuna geçer.
+Processin eğer beklemeye ihtiyacı olursa (örneğin bir kullanıcı girdisi …), “blocked” durumuna geçirilir. Kullanıcı girdisi geldiğinde tekrar “waiting” durumuna geçirilir.
+Processin işlenmesi bittiği zaman ve ya işletim sistemi tarafından sonlandırıldığı zaman; “terminated” durumuna alınır.
+
+
+Thread( iş parçacığı)
+“Thread”ler de “Processler gibi”  işlem birimleridir ve  hafifsiklet processler (“lightweight processes”) olarak adlandırılırlar.
+Threadler daha az kaynağa ihtiyaç duymaktadırlar.
+“Thread”ler bir “process” içinde yer almaktadır.
+Her thread mutlaka bir procecesse sahiptir ve onun kaynaklarından faydalanabilir.
+
+
+“Thread” ile “Process”
+“Thread”ler de “process”ler gibi uygulamalarda paralellik elde etmek için kullanılırlar.
+Ancak “process”ler daha bağımsız işletim birimleridir, kendilerine ait durum bilgileri, kendilerine ait adres alanlarıdır
+ve birbirleriyle ancak IPC mekanizması ile haberleşirler.
+Bir “process” birçok “thread” barındırabilir, her bir “thread” mutlaka bir “process” in içinde yer almaktadır,
+aynı “process” içindeki tüm “thread”ler aynı hafıza alanını ve aynı durumu paylaşır birbirleriyler direk olarak haberleşebilir
+zaten aynı alanı paylaşırlar.
+
